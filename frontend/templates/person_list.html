@@ -1,0 +1,109 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Person List | Person Information</title>
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+  <header class="topbar">
+
+    <a class="brand" href="/">
+      Person Information
+    </a>
+
+    <nav>
+      <a href="/">Add Person</a>
+      <a class="active" href="/persons/">Person List</a>
+    </nav>
+
+  </header>
+
+  <main class="container wide">
+
+    <section class="intro list-intro">
+
+      <div>
+
+        <h1>
+          Person records
+        </h1>
+
+        <p>
+          All records saved in the database.
+        </p>
+
+      </div>
+
+      <a class="button" href="/">
+        + Add Person
+      </a>
+
+    </section>
+
+    <section class="panel table-panel">
+
+      <div class="table-head">
+
+        <h2>
+          All persons
+        </h2>
+
+        <span id="recordCount" class="count">
+          Loading…
+        </span>
+
+      </div>
+
+      <div id="listNotice" class="notice" hidden></div>
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+
+            <tr>
+              <th>Name</th>
+              <th>Mobile Number</th>
+              <th>Age</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Post Code</th>
+              <th>Full Address</th>
+            </tr>
+
+          </thead>
+
+          <tbody id="personRows">
+
+            <tr>
+              <td colspan="7" class="empty">
+                Loading records…
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    Person Information Management
+  </footer>
+
+  <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Add Person | Person Information</title>
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+  <header class="topbar">
+
+    <a class="brand" href="/">
+      Person Information
+    </a>
+
+    <nav>
+      <a class="active" href="/">Add Person</a>
+      <a href="/persons/">Person List</a>
+    </nav>
+
+  </header>
+
+  <main class="container">
+
+    <section class="intro">
+
+      <p class="eyebrow">
+        PERSON INFORMATION MANAGEMENT
+      </p>
+
+      <h1>
+        Add a person
+      </h1>
+
+      <p>
+        Enter the details below to add a record to the directory.
+      </p>
+
+    </section>
+
+    <section class="panel">
+
+      <div id="notice" class="notice" role="status" hidden></div>
+
+
+      <form id="personForm" novalidate>
+
+        <div class="form-grid">
+
+          <label>
+            Person Name
+
+            <input name="person_name" required maxlength="120" placeholder="e.g. Rahul Sharma">
+          </label>
+
+          <label>
+            Mobile Number
+
+            <input name="mobile_number" required inputmode="tel" placeholder="10-digit mobile number">
+          </label>
+
+          <label>
+            Age
+
+            <input name="age" type="number" min="1" max="120" required placeholder="Age">
+          </label>
+
+          <label>
+            City
+
+            <input name="city" required maxlength="100" placeholder="City">
+          </label>
+
+          <label>
+            State
+
+            <input name="state" required maxlength="100" placeholder="State">
+          </label>
+
+          <label>
+            Post Code
+
+            <input name="post_code" required maxlength="12" placeholder="Postal / PIN code">
+          </label>
+
+          <label class="full">
+            Full Address
+
+            <textarea name="full_address" rows="4" required placeholder="House number, street, area..."></textarea>
+          </label>
+
+        </div>
+
+
+        <div class="form-actions">
+
+          <button type="reset" class="button secondary">
+            Clear
+          </button>
+
+
+          <button type="submit" class="button">
+            Save Person
+
+            <span aria-hidden="true">
+              →
+            </span>
+          </button>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <footer>
+    Person Information Management
+  </footer>
+
+  <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

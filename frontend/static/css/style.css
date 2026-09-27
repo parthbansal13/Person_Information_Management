@@ -1,0 +1,366 @@
+:root {
+         --ink: #202b3c;
+         --muted: #738095;
+         --line: #e6eaf0;
+         --primary: #315fce;
+         --bg: #f5f7fb;
+         --white: #fff;
+}
+
+* {
+         box-sizing: border-box;
+}
+
+body {
+         margin: 0;
+         background: var(--bg);
+         color: var(--ink);
+         font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+                  "Segoe UI", sans-serif;
+         font-size: 14px;
+}
+
+.topbar {
+         height: 72px;
+         background: #fff;
+         border-bottom: 1px solid var(--line);
+
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+
+         padding: 0 max(calc((100% - 1120px) / 2), 24px);
+}
+
+
+.brand {
+         font-size: 21px;
+         font-weight: 800;
+         letter-spacing: -0.7px;
+         color: var(--ink);
+         text-decoration: none;
+}
+
+.brand span {
+         color: var(--primary);
+}
+
+nav {
+         display: flex;
+         gap: 8px;
+}
+
+nav a {
+         padding: 10px 15px;
+         border-radius: 8px;
+
+         text-decoration: none;
+         color: #657187;
+         font-weight: 600;
+}
+
+nav a.active,
+nav a:hover {
+         background: #edf2ff;
+         color: var(--primary);
+}
+
+
+.container {
+         max-width: 800px;
+         margin: 48px auto;
+         padding: 0 24px;
+}
+
+.container.wide {
+         max-width: 1280px;
+}
+
+
+.intro {
+         margin-bottom: 24px;
+}
+
+.eyebrow {
+         font-size: 11px;
+         font-weight: 800;
+         letter-spacing: 1.5px;
+         color: var(--primary);
+
+         margin: 0 0 10px;
+}
+
+.intro h1 {
+         font-size: 30px;
+         letter-spacing: -1px;
+         margin: 0 0 8px;
+}
+
+.intro p:not(.eyebrow) {
+         color: var(--muted);
+         margin: 0;
+         line-height: 1.6;
+}
+
+.panel {
+         background: #fff;
+         border: 1px solid var(--line);
+         border-radius: 14px;
+
+         padding: 28px;
+
+         box-shadow: 0 5px 20px rgba(31, 48, 79, 0.035);
+}
+
+.form-grid {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 22px 20px;
+}
+
+label {
+         display: flex;
+         flex-direction: column;
+         gap: 9px;
+
+         font-weight: 650;
+         color: #3b475a;
+}
+
+.full {
+         grid-column: 1 / -1;
+}
+
+input,
+textarea {
+         width: 100%;
+
+         border: 1px solid #dce2eb;
+         border-radius: 8px;
+
+         padding: 12px 13px;
+
+         font: inherit;
+         color: var(--ink);
+         background: #fff;
+
+         outline: none;
+
+         transition: border 0.15s, box-shadow 0.15s;
+}
+
+input:focus,
+textarea:focus {
+         border-color: #7796e8;
+         box-shadow: 0 0 0 3px #315fce18;
+}
+
+textarea {
+         resize: vertical;
+         min-height: 105px;
+}
+
+.form-actions {
+         display: flex;
+         justify-content: flex-end;
+         gap: 10px;
+
+         margin-top: 28px;
+}
+
+.button {
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         gap: 10px;
+
+         border: 0;
+         border-radius: 8px;
+
+         padding: 12px 18px;
+
+         background: var(--primary);
+         color: #fff;
+
+         text-decoration: none;
+         font: inherit;
+         font-weight: 700;
+
+         cursor: pointer;
+}
+
+.button:hover {
+         background: #254eae;
+}
+
+.button.secondary {
+         background: #f1f4f8;
+         color: #566276;
+}
+
+.button:disabled {
+         opacity: 0.65;
+         cursor: wait;
+}
+
+.notice {
+         padding: 12px 14px;
+         border-radius: 8px;
+
+         margin-bottom: 18px;
+
+         line-height: 1.5;
+}
+
+.notice.success {
+         background: #eaf8ef;
+         color: #23683c;
+}
+
+.notice.error {
+         background: #fff0ef;
+         color: #a3332a;
+}
+
+footer {
+         text-align: center;
+         color: #9aa4b3;
+
+         padding: 28px 15px;
+
+         font-size: 12px;
+}
+
+.list-intro {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+
+         gap: 20px;
+}
+
+.table-panel {
+         padding: 0;
+         overflow: hidden;
+}
+
+.table-head {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+
+         padding: 22px 24px;
+
+         border-bottom: 1px solid var(--line);
+}
+
+.table-head h2 {
+         font-size: 16px;
+         margin: 0;
+}
+
+.count {
+         color: var(--muted);
+         font-size: 12px;
+}
+
+.table-wrap {
+         overflow-x: auto;
+}
+
+table {
+         width: 100%;
+         min-width: 1120px;
+
+         border-collapse: collapse;
+         text-align: left;
+
+         white-space: normal;
+}
+
+th {
+         font-size: 11px;
+         text-transform: uppercase;
+         letter-spacing: 0.5px;
+
+         color: #748095;
+         background: #fafbfd;
+
+         white-space: nowrap;
+}
+
+th,
+td {
+         padding: 15px 16px;
+
+         border-bottom: 1px solid var(--line);
+
+         vertical-align: top;
+}
+
+td {
+         color: #465267;
+         line-height: 1.5;
+}
+
+tbody tr:last-child td {
+         border-bottom: 0;
+}
+
+.empty {
+         text-align: center;
+         color: var(--muted);
+         padding: 38px;
+}
+
+@media (max-width: 650px) {
+
+         .topbar {
+                  padding: 0 16px;
+                  height: 64px;
+         }
+
+         .brand {
+                  font-size: 18px;
+         }
+
+         nav a {
+                  padding: 9px;
+                  font-size: 12px;
+         }
+
+         .container {
+                  margin: 30px auto;
+                  padding: 0 15px;
+         }
+
+         .panel {
+                  padding: 20px;
+         }
+
+         .form-grid {
+                  grid-template-columns: 1fr;
+                  gap: 17px;
+         }
+
+         .full {
+                  grid-column: auto;
+         }
+
+         .intro h1 {
+                  font-size: 26px;
+         }
+
+         .list-intro {
+                  align-items: flex-start;
+                  flex-direction: column;
+         }
+
+         .list-intro .button {
+                  width: 100%;
+         }
+
+         .table-head {
+                  padding: 18px;
+         }
+}
